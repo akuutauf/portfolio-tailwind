@@ -19,3 +19,18 @@ window.onscroll = function () {
     header.classList.remove("navbar-fixed");
   }
 };
+
+// Text Running With Button
+var i = 0;
+var text =
+  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio nobis fugit obcaecati quasi sit quaerat. Ut culpa maxime placeat repudiandae nulla vitae adipisci explicabo laudantium ipsa unde, perferendis, cumque, quam nisi id corporis aliquid? Nesciunt est iusto incidunt dolorem quis.";
+
+var time = 15;
+
+function typing() {
+  if (i < text.length) {
+    document.querySelector(".typing-text").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typing, time);
+  }
+}
