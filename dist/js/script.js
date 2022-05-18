@@ -23,7 +23,7 @@ window.onscroll = function () {
 // Text Running With Button
 var i = 0;
 var text =
-  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio nobis fugit obcaecati quasi sit quaerat. Ut culpa maxime placeat repudiandae nulla vitae adipisci explicabo laudantium ipsa unde, perferendis, cumque, quam nisi id corporis aliquid? Nesciunt est iusto incidunt dolorem quis.";
+  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio nobis fugit obcaecati quasi sit quaerat. Ut culpa maxime placeat repudiandae nulla vitae adipisci explicabo laudantium ipsa unde, perferendis, cumque, quam nisi id corporis aliquid?";
 
 var time = 15;
 
@@ -33,4 +33,19 @@ function typing() {
     i++;
     setTimeout(typing, time);
   }
+}
+
+// button change in text running
+const button = document.querySelector("#button");
+const reload = document.querySelector("#reload");
+
+// event (action yang dilakukan)
+button.addEventListener("click", function () {
+  button.classList.toggle("hidden");
+  reload.classList.toggle("hidden");
+});
+
+function reloadPage() {
+  // location.reload();
+  // history.go(0);
 }

@@ -557,12 +557,20 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-right: 1rem;
 }
 
+.ml-2 {
+  margin-left: 0.5rem;
+}
+
 .mt-1 {
   margin-top: 0.25rem;
 }
 
 .mb-5 {
   margin-bottom: 1.25rem;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
 }
 
 .mb-10 {
@@ -655,6 +663,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .max-w-xl {
   max-width: 36rem;
+}
+
+.max-w-\[80px\] {
+  max-width: 80px;
 }
 
 .max-w-\[120px\] {
@@ -861,6 +873,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .pb-16 {
   padding-bottom: 4rem;
+}
+
+.pt-10 {
+  padding-top: 2.5rem;
+}
+
+.pb-10 {
+  padding-bottom: 2.5rem;
 }
 
 .pt-24 {
@@ -1122,6 +1142,11 @@ body {
 }
 
 @media (min-width: 640px) {
+  .sm\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
   .sm\:text-4xl {
     font-size: 2.25rem;
     line-height: 2.5rem;
@@ -1175,6 +1200,14 @@ body {
 
   .lg\:mt-9 {
     margin-top: 2.25rem;
+  }
+
+  .lg\:mt-3 {
+    margin-top: 0.75rem;
+  }
+
+  .lg\:mt-10 {
+    margin-top: 2.5rem;
   }
 
   .lg\:block {
