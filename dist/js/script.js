@@ -23,9 +23,9 @@ window.onscroll = function () {
 // Text Running With Button
 var i = 0;
 var text =
-  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio nobis fugit obcaecati quasi sit quaerat. Ut culpa maxime placeat repudiandae nulla vitae adipisci explicabo laudantium ipsa unde, perferendis, cumque, quam nisi id corporis aliquid?";
+  "Document Object Model (DOM) adalah sebuah antarmuka pemrograman (programing interface) untuk HTML, XML dan SVG yang bersifat lintas platform dan bahasa-independen. Sebuah browser tidak harus menggunakan DOM untuk menampilkan dokumen HTML. Namun DOM Diperlukan oleh JavaScript yang akan mengubah tampilan sebuah situs web secara dinamis. Dengan kata lain, DOM adalah cara JavaScript melihat suatu halaman HTML.";
 
-var time = 15;
+var time = 10;
 
 function typing() {
   if (i < text.length) {
