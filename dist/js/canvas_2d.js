@@ -1,149 +1,116 @@
 // Program Main Javascript
 
 // canvas
-const canvasKita = document.getElementById("myCanvas");
-canvasKita.width = 600;
+const canvasKita = document.getElementById("myCanvas2D");
+canvasKita.width = 400;
 canvasKita.height = 400;
 const ctx = canvasKita.getContext("2d");
 let imageDataSaya = ctx.getImageData(0, 0, canvasKita.width, canvasKita.height);
 
-// variable warna
-let skinUfoGrey = "#606470";
-let kacaUfoGrey = "#D3E0EA";
-let kacaUfoPutih = "#F7F7F7";
-let kacaUfoBiru = "#93DEFF";
+// implementasi object 2d (animal fish)
+// tone pewarnaan object 2d
+let skinTransparent = "#FFBC80";
+let pinkBody = "#FE57E3";
+let pinkMouth = "#F70AB2";
+let blueFin = "#0192F5";
+let blueEye = "#060094";
+let cyanFin = "#05CAEC";
+let purpleScale = "#8447F0";
+let whiteEye = "#F2F2F2";
 
-function baseUfo() {
-  // area batasan object base ufo
-  ctx.save();
+// fungsi object
+function bodyFish() {
   ctx.beginPath();
-  ctx.rect(150, 50, 300, 300);
-  // ctx.stroke();
+  ctx.arc(150, 200, 115, 0, 2 * Math.PI, false);
+  ctx.fillStyle = pinkBody;
+  ctx.fill();
   ctx.clip();
+}
 
-  // object lingkaran base ufo
+function finFish() {
+  // sirip atas
   ctx.beginPath();
-  ctx.arc(300, 350, 140, 0, 2 * Math.PI, false);
-  ctx.fillStyle = skinUfoGrey;
+  ctx.arc(170, 130, 65, 0, 2 * Math.PI, false);
+  ctx.fillStyle = blueFin;
+  ctx.fill();
+
+  ctx.beginPath();
+  ctx.arc(230, 200, 60, 0, 2 * Math.PI, false);
+  ctx.fillStyle = blueFin;
+  ctx.fill();
+
+  // sirip bawah
+  ctx.beginPath();
+  ctx.arc(200, 285, 35, 0, 2 * Math.PI, false);
+  ctx.fillStyle = blueFin;
   ctx.fill();
 }
 
-function jendelaUfo() {
-  // jendela 1 (kiri)
+function faceFish() {
+  // mata kiri
   ctx.beginPath();
-  ctx.arc(220, 300, 15, 0, 2 * Math.PI, false);
-  ctx.fillStyle = kacaUfoPutih;
+  ctx.arc(90, 170, 25, 0, 2 * Math.PI, false);
+  ctx.fillStyle = whiteEye;
   ctx.fill();
 
-  // jendela 2 (tengah)
+  // mata kanan
   ctx.beginPath();
-  ctx.arc(300, 315, 15, 0, 2 * Math.PI, false);
-  ctx.fillStyle = kacaUfoPutih;
-  ctx.stroke();
+  ctx.arc(135, 170, 25, 0, 2 * Math.PI, false);
+  ctx.fillStyle = whiteEye;
   ctx.fill();
 
-  // jendela 3 (kanan)
+  // retina mata kiri
   ctx.beginPath();
-  ctx.arc(380, 300, 15, 0, 2 * Math.PI, false);
-  ctx.fillStyle = kacaUfoPutih;
-  ctx.stroke();
+  ctx.arc(90, 170, 16, 0, 2 * Math.PI, false);
+  ctx.fillStyle = blueEye;
+  ctx.fill();
+
+  // retina mata kanan
+  ctx.beginPath();
+  ctx.arc(135, 170, 16, 0, 2 * Math.PI, false);
+  ctx.fillStyle = blueEye;
+  ctx.fill();
+
+  // bibir ikan
+  ctx.beginPath();
+  ctx.arc(110, 240, 22, 0, 2 * Math.PI, false);
+  ctx.fillStyle = pinkMouth;
+  ctx.fill();
+
+  // mulut dalam ikan
+  ctx.beginPath();
+  ctx.arc(110, 240, 12, 0, 2 * Math.PI, false);
+  ctx.fillStyle = whiteEye;
   ctx.fill();
 }
 
-function atapUfo() {
-  // area batasan object atap ufo
-  ctx.save();
+function scaleFish() {
+  // sirip ikan
   ctx.beginPath();
-  ctx.arc(300, 280, 100, 0, 2 * Math.PI, false);
+  ctx.arc(190, 210, 25, 1.9, 1.4 * Math.PI, true);
+  ctx.fillStyle = blueFin;
+  ctx.fill();
+
+  // sisik ikan
+  // ctx.restore();
+  // ctx.beginPath();
+  // ctx.arc(210, 185, 8, 0, 1 * Math.PI, false);
+  // ctx.strokeStyle = "#000000";
   // ctx.stroke();
-  ctx.clip();
-
-  // object base atap ufo
-  ctx.beginPath();
-  ctx.arc(300, 140, 140, 0, 2 * Math.PI, false);
-  ctx.fillStyle = kacaUfoBiru;
-  ctx.fill();
-
-  // pantulan cahaya
-  ctx.beginPath();
-  ctx.arc(240, 200, 30, 0, 2 * Math.PI, false);
-  ctx.fillStyle = kacaUfoPutih;
-  ctx.fill();
+  // // hiasan bulu owl atas kiri
+  // ctx.beginPath();
+  // ctx.arc(190, 185, 8, 0, 1 * Math.PI, false);
+  // ctx.strokeStyle = "#000000";
+  // ctx.stroke();
+  // // hiasan bulu owl bawah tengah
+  // ctx.beginPath();
+  // ctx.arc(200, 198, 8, 0, 1 * Math.PI, false);
+  // ctx.strokeStyle = "#000000";
+  // ctx.stroke();
 }
 
-function rodaUfo() {
-  // roda ufo 1 (kiri)
-  ctx.beginPath();
-  ctx.arc(210, 350, 20, 0, 2 * Math.PI, false);
-  ctx.fillStyle = kacaUfoGrey;
-  ctx.fill();
-
-  // roda ufo 2 (tengah kiri)
-  ctx.beginPath();
-  ctx.arc(270, 350, 20, 0, 2 * Math.PI, false);
-  ctx.fillStyle = kacaUfoGrey;
-  ctx.fill();
-
-  // roda ufo 3 (tengah kanan)
-  ctx.beginPath();
-  ctx.arc(330, 350, 20, 0, 2 * Math.PI, false);
-  ctx.fillStyle = kacaUfoGrey;
-  ctx.fill();
-
-  // roda ufo 4 (kanan)
-  ctx.beginPath();
-  ctx.arc(390, 350, 20, 0, 2 * Math.PI, false);
-  ctx.fillStyle = kacaUfoGrey;
-  ctx.fill();
-}
-
-function antena() {
-  // base antena
-  ctx.beginPath();
-  ctx.arc(300, 185, 20, 0, 2 * Math.PI, false);
-  ctx.fillStyle = skinUfoGrey;
-  ctx.fill();
-
-  // antena
-  ctx.beginPath();
-  ctx.moveTo(300, 165);
-  ctx.lineTo(300, 120);
-  ctx.stroke();
-
-  // lingkaran antena
-  ctx.beginPath();
-  ctx.arc(300, 120, 10, 0, 2 * Math.PI, false);
-  ctx.fillStyle = skinUfoGrey;
-  ctx.fill();
-}
-
-// fungsi pemanggilan agar menjadi satu kesatuan object
-function ufo() {
-  // pemanggilan setiap object fungsi
-  antena();
-  rodaUfo();
-  baseUfo();
-  jendelaUfo();
-  atapUfo();
-}
-
-// variabel untuk animasi pada canvas
-let canvasW = canvasKita.width;
-let canvasH = canvasKita.height;
-let x = 0;
-
-ufo();
-
-// animation
-const ufoSpining = [{ transform: "rotate(0) scale(1)" }, { transform: "rotate(360deg) scale(0)" }];
-
-const spiningTime = {
-  duration: 2000,
-  iterations: 1,
-};
-
-const newspaper = document.querySelector("#myCanvas");
-
-newspaper.addEventListener("click", () => {
-  newspaper.animate(ufoSpining, spiningTime);
-});
+// pemanggilan fungsi object 2d
+finFish();
+bodyFish();
+faceFish();
+scaleFish();
