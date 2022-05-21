@@ -1,5 +1,5 @@
 // import library three js for online use
-import * as THREE from "https://cdn.skypack.dev/three@0.122.0/build/three.module.js";
+// import * as THREE from "https://cdn.skypack.dev/three@0.122.0/build/three.module.js";
 
 // Program Main Three JS
 
