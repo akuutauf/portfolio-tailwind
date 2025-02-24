@@ -39,12 +39,6 @@ function typing() {
 const button = document.querySelector("#button");
 const reload = document.querySelector("#reload");
 
-// event (action yang dilakukan)
-button.addEventListener("click", function () {
-  button.classList.toggle("hidden");
-  reload.classList.toggle("hidden");
-});
-
 function reloadPage() {
   // location.reload();
   // history.go(0);
