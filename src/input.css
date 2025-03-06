@@ -29,3 +29,14 @@ body {
 .hamburger-active > span:nth-child(3) {
   @apply -rotate-45;
 }
+
+.line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 5; /* Jumlah baris yang diizinkan */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card-hover:hover {
+  box-shadow: 0px 5px 40px rgba(29, 34, 47, 0.15) !important;
+}
